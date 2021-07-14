@@ -8,5 +8,8 @@
 ## Usage
 
 ```sh
-docker run -it --rm sugarshin/centraldogma-cli --connect "${CENTRALDOGMA_HOST}" --token "${CENTRALDOGMA_TOKEN}" ls
+docker run -it --rm sugarshin/centraldogma-cli \
+  --connect "${CENTRALDOGMA_HOST}" \
+  --token "${CENTRALDOGMA_TOKEN}" \
+  ls
 ```
