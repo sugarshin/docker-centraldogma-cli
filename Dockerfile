@@ -2,7 +2,7 @@ FROM golang:1.16 AS builder
 
 LABEL maintainer "Shingo Sato <shinsugar@gmail.com>"
 
-ENV CENTRALDOGMA_GO_COMMIT_HASH "89f1649b6ed3700690a32942c6a886e6eb08b3d5"
+ENV CENTRALDOGMA_GO_COMMIT_HASH "567ee61903897c6bd1bf987e9cf0dfcdade2214b"
 WORKDIR /usr/src
 RUN git clone https://github.com/line/centraldogma-go.git
 WORKDIR /usr/src/centraldogma-go
