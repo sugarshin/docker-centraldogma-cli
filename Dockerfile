@@ -10,7 +10,7 @@ RUN git reset --hard $CENTRALDOGMA_GO_COMMIT_HASH
 WORKDIR /usr/src/centraldogma-go/internal/app/dogma
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o dogma .
 
-FROM alpine:3.13 AS runner
+FROM alpine:3.17 AS runner
 
 COPY --from=builder /usr/src/centraldogma-go/internal/app/dogma/dogma /usr/local/bin
 ENTRYPOINT ["dogma"]
