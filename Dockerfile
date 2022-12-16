@@ -1,12 +1,10 @@
-FROM golang:1.16 AS builder
+FROM golang:1.15 AS builder
 
 LABEL maintainer "Shingo Sato <shinsugar@gmail.com>"
 
-ENV CENTRALDOGMA_GO_COMMIT_HASH "567ee61903897c6bd1bf987e9cf0dfcdade2214b"
+ENV CENTRALDOGMA_GO_VERSION "0.0.1"
 WORKDIR /usr/src
-RUN git clone https://github.com/line/centraldogma-go.git
-WORKDIR /usr/src/centraldogma-go
-RUN git reset --hard $CENTRALDOGMA_GO_COMMIT_HASH
+RUN git clone -b $CENTRALDOGMA_GO_VERSION --depth 1 https://github.com/line/centraldogma-go.git
 WORKDIR /usr/src/centraldogma-go/internal/app/dogma
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o dogma .
 
