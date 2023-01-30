@@ -49,7 +49,7 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Build and Push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
