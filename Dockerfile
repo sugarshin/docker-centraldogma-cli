@@ -8,7 +8,7 @@ RUN git clone -b $CENTRALDOGMA_GO_VERSION --depth 1 https://github.com/line/cent
 WORKDIR /usr/src/centraldogma-go/internal/app/dogma
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o dogma .
 
-FROM alpine:3.17 AS runner
+FROM alpine:3.19 AS runner
 
 COPY --from=builder /usr/src/centraldogma-go/internal/app/dogma/dogma /usr/local/bin
 ENTRYPOINT ["dogma"]
