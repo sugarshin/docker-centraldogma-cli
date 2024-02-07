@@ -1,4 +1,4 @@
-FROM golang:1.15 AS builder
+FROM golang:1.22 AS builder
 
 LABEL maintainer "Shingo Sato <shinsugar@gmail.com>"
 
